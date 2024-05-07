@@ -6,12 +6,41 @@ int factorial(int);
 double cos(double);
 double sin(double);
 double log(double);
+double abs(double);
 
+double powerof(double x, double y)
+{
+    if (y)
+    {
+        return newtonraphsonpow(x, y);
+    }
+    else
+    {
 
+    }
+}
 double newtonraphsonpow(double x, double y)
 {
-    int x = 0;   
+    double xnew = 0;
+    double x = 0;
+    while (abs(xnew-x) > 1.0E-14)
+    {
+        xnew = x - powerof(x, y)/powerof(x,y);
+    }
 }
+
+double abs(double x)
+{
+    if (x > 0)
+    {
+        return x;
+    }
+    else
+    {
+        return -x;
+    }
+}
+
 double exp(double x){
     double s = x;
     double sum = 0;

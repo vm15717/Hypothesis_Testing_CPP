@@ -74,7 +74,13 @@ double poissoncdf(int x, double l)
 
 double binomialcdf(int k, int n, double p)
 {
-
+    int i = 0;
+    double sum = 0;
+    for (i = 0; i < k; i++)
+    {
+        sum = sum + nchoosek(n, i)*pow(p,i)*pow(1-p, n-i);
+    }
+    return sum;
 }
 
 double bernoullipdf(int k, double p)
